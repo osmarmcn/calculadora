@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+</head>
+<body>
+
+    <script> 
+            function calculadora(){
+                let operacao = Number( prompt('escolha uma operação:\n 1 - soma(+) \n 2 - subtração (-) \n 3 - multiplicação (*) \n 4 - divisão \n 5 - divisão inteira (%) \n 6 - potência (**)'))
+
+                if(!operacao || operacao <=0 || operacao >=7){
+                    alert('erro! digite a opção de forma correta')
+                }else{
+                
+                    let n1 = Number(prompt('digite um valor:'))
+                    let n2 = Number(prompt('dgite outro valor:'))
+                    let total // a variavel pode ficar sem nenhum valor ou deixa vazia como let total = '', no caso ao lado a variavel não estupula nenhum valor.
+
+                    if(!n1 || !n2){
+                        alert('erro você não digitou um numero')
+                    }else{
+                        const novaOperaçao = Number(prompt(`escolha qual opção: \n 1 - continuar  \n 2 - sair`))
+                        if(novaOperaçao == 1){
+                            calculadora()
+                        }else if(novaOperaçao == 2){
+                            alert('até logo!!')
+                        }else{
+                            alert('digite a opção correta')
+                            novaOperaçao()
+                        }
+
+                        switch(operacao){
+                            case 1:
+                                total = n1 + n2
+                                console.log(`${n1} + ${n2} = ${total}`)
+                                novaOperaçao()
+                                break
+                            
+                            case 2:
+                                total = n1 - n2
+                                console.log(`${n1} - ${n2} = ${total}`)
+                                novaOperaçao()
+                                break
+
+                            case 3:
+                                total = n1 * n2
+                                console.log(`${n1} + ${n2} = ${total}`)
+                                novaOperaçao()
+                                break
+                            case 4:
+                                total = n1 / n2
+                                console.log(`${n1} / ${n2} = ${total}`)
+                                novaOperaçao()
+                                break
+                            case 5:
+                                total = n1 % n2 == 0
+                                console.log(`${n1} % ${n2} = ${total}`)
+                                novaOperaçao()
+                                break
+                            case 6:
+                                total = n1 ** n2
+                                console.log(`${n1} ** ${n2} = ${total}`)
+                                novaOperaçao()
+                                break
+                        }
+                    }    
+                }
+            }
+            calculadora()
+
+
+    </script>
+    
+</body>
+</html>
